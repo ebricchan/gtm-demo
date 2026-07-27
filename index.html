@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,13 +79,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="product-info">
     <h2>Recycled Canvas Backpack</h2>
     <div class="price">$68.00</div>
-    <p>Su geçirmez, geri dönüştürülmüş kumaştan üretilmiş, günlük kullanım için tasarlanmış sırt çantası.</p>
+    <p>A water-resistant backpack made from recycled canvas, designed for everyday use.</p>
 
     <button class="btn btn-secondary" id="add-to-cart-btn" data-product="Recycled Canvas Backpack" data-price="68.00">
-      Sepete Ekle
+      Add to Cart
     </button>
     <button class="btn btn-primary" id="buy-now-btn" data-product="Recycled Canvas Backpack" data-price="68.00">
-      Şimdi Satın Al
+      Buy Now
     </button>
 
     <div id="status"></div>
@@ -93,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-  // dataLayer henüz yoksa oluştur (GTM eklenmeden de sayfa çalışsın diye)
+  // Initialize dataLayer in case GTM hasn't loaded yet (so the page still works standalone)
   window.dataLayer = window.dataLayer || [];
 
   function pushEvent(eventName, btn) {
@@ -110,9 +110,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
-    // Sayfada görsel geri bildirim (GTM'siz de test edebilmen için)
+    // Visual feedback on the page (so you can test even without GTM)
     var status = document.getElementById('status');
-    status.textContent = '✓ dataLayer event gönderildi: "' + eventName + '"';
+    status.textContent = '✓ dataLayer event sent: "' + eventName + '"';
     setTimeout(function() { status.textContent = ''; }, 2500);
 
     console.log('dataLayer push:', window.dataLayer[window.dataLayer.length - 1]);
